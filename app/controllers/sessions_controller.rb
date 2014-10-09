@@ -1,33 +1,25 @@
 class SessionsController < ApplicationController
-  
   def new
-
   end
 
-  def destroy
-
-  	session[:user_id] = nil
-  end
   def create
-	
-  	user = User.find_by_email(params[:email])
-    if user
-      if user.authenticate(params[:password])
-       render text: "PASSWORD OK"
-      else
-        render text: "PASSWORD NOT OK"
-      end
+    # Check if user with email exists
+    user = User.find_by_email(params[:email])
     if user &&user.authenticate(params[:password])
       # Password is correct
       # Set the session to current user
       # Will use cookie
       session[:user_id] = user.id
-      redirect_to root_url
-     else
-      render text: "USER NOT FOUND"
+
+      redirect_to pet_path
+    else
       # There's no user or the password is incorrect
       render :new
-  	end
-  end	
-	end
+    end
+  end
+
+  def destroy
+    session[:user_id] = nil
+    redirect_to root_url
+  end
 end

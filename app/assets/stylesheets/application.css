@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+body{
+	font-family: Helvetica;
+	padding: 50px;
+}
+
+table tr {
+
+	padding: 20px;
+}
+
+table tr {border-bottom:1px solid #008999}

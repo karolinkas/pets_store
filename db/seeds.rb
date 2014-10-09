@@ -11,9 +11,13 @@ species = Species.create([{ name: "Reptiles",
 													 	  }
 													 ])
 
-pets = Pet.create([{ species_id: 2,
+pets = Pet.create([{  name: "Cornelia",
+											species_id: 1
 												}, 
-										{ species_id: 1,
+										{ name: "Angelika",
+											species_id: 2
 										   }
 										])
+
+
 

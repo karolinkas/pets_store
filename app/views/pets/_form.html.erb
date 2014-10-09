@@ -1,0 +1,20 @@
+<%= form_for Pet.new do |f| %>
+
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "name-field" %>
+  </p>
+
+  <p>
+    <%= form_for Pet.new do |f| %>
+  <%= f.select :species, Species.all.collect { |p| [ p.name, p.id ] }, include_blank: true %>
+  <%= f.submit %>
+<% end %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>
+

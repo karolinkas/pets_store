@@ -11,12 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141009134915) do
+ActiveRecord::Schema.define(version: 20141009151824) do
 
   create_table "pets", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "species_id"
+    t.string   "name"
   end
 
   create_table "sessions", force: true do |t|
@@ -35,7 +36,7 @@ ActiveRecord::Schema.define(version: 20141009134915) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "email"
-    t.string   "email_digest"
+    t.string   "password_digest"
   end
 
 end
